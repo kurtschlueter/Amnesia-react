@@ -1,15 +1,11 @@
-var page3 = require('./page3.ios')
-var map = require('./map.ios')
-
 import React, {
   Component,
   View,
   Text,
-  TouchableOpacity,
   StyleSheet
 } from 'react-native';
 
-class Page2 extends Component {
+class Map extends Component {
 
   componentDidMount(){
     console.log('page 2 did mount')
@@ -41,16 +37,7 @@ class Page2 extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.regularText}> {this.props.randomString} </Text>
-        <TouchableOpacity onPress={this.goToPage3.bind(this)}>
-          <Text style={styles.buttonText}> [ Go to Page 3 ] </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.goBackHome.bind(this)}>
-          <Text style={styles.buttonText}> [ Go Back Home ] </Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={this.goToMap.bind(this)}>
-          <Text style={styles.buttonText}> [ Go to Map ] </Text>
-        </TouchableOpacity>
+        <Text style={styles.regularText}> Map Page </Text>
       </View>
     );
   }
@@ -59,7 +46,7 @@ class Page2 extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'pink',
+    backgroundColor: 'orange',
   },
 
   regularText: {
@@ -69,14 +56,6 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: 'bold',
   },
-
-  buttonText: {
-    marginTop: 30,
-    marginLeft: 55,
-    color: 'white',
-    fontSize: 30,
-  },
-
 });
 
-module.exports = Page2;
+module.exports = Map;
