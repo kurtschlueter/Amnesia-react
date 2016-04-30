@@ -15,7 +15,6 @@ class AmnesiaReact extends Component {
       <NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: "Home Page",
           navigationBarHidden: true,
           component: HomePage
       }}/>
