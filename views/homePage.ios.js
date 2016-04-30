@@ -21,7 +21,7 @@ class HomePage extends Component {
     this.props.navigator.push({
       navigationBarHidden: true,
       component: nextPage,
-      passProps: {randomString: 'Mouuuuuuuuuse'}
+      passProps: {randomString: 'Mouuuuuse'}
     });
 
   }
