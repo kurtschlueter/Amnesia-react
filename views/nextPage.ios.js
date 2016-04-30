@@ -14,7 +14,7 @@ class NextPage extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.regularText}>  Hello </Text>
+        <Text style={styles.regularText}> {this.props.randomString} </Text>
       </View>
     );
   }
