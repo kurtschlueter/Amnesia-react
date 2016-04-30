@@ -11,7 +11,7 @@ import React, {
 class NextPage extends Component {
 
   componentDidMount(){
-    console.log('nextPage did mount')
+    console.log('page 2 did mount')
   }
 
   goToPage3() {

@@ -1,6 +1,6 @@
 // I had to bind this to the onPress function goToNext page because we are using ES6. It does not autobind
 
-var nextPage = require('./nextPage.ios')
+var page2 = require('./page2.ios')
 
 import React, {
   Component,
@@ -16,11 +16,11 @@ class HomePage extends Component {
     console.log('homePage did mount')
   }
 
-  goToNextPage() {
+  goToPage2() {
     console.log('entered go to next page')
     this.props.navigator.push({
       navigationBarHidden: true,
-      component: nextPage,
+      component: page2,
       passProps: {randomString: 'Mouuuuuse'}
     });
 
@@ -30,8 +30,8 @@ class HomePage extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}> AMNESIA </Text>
-        <TouchableOpacity onPress={this.goToNextPage.bind(this)}>
-          <Text style={styles.next}> [ Go to next page ] </Text>
+        <TouchableOpacity onPress={this.goToPage2.bind(this)}>
+          <Text style={styles.next}> [ Go to page 2] </Text>
         </TouchableOpacity>
       </View>
     );

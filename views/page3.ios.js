@@ -2,18 +2,27 @@ import React, {
   Component,
   View,
   Text,
+  TextInput,
   TouchableOpacity,
   StyleSheet
 } from 'react-native';
 
 class Page3 extends Component {
 
+
+  constructor(props){
+    super(props);
+    this.state = {
+      inputString: "Nothing",
+    };
+  }
+
   componentDidMount(){
     console.log('nextPage did mount')
   }
 
-  goToNextPage() {
-    console.log('entered go to nextPage')
+  goToPage2() {
+    console.log('entered go to page 2')
     this.props.navigator.popN(1)
   }
 
@@ -26,12 +35,18 @@ class Page3 extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.regularText}> {this.props.randomString} </Text>
-        <TouchableOpacity onPress={this.goToNextPage.bind(this)}>
-          <Text style={styles.buttonText}> [ Go to nextPage ] </Text>
+        <TouchableOpacity onPress={this.goToPage2.bind(this)}>
+          <Text style={styles.buttonText}> [ Go back to page 2 ] </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={this.goBackHome.bind(this)}>
           <Text style={styles.buttonText}> [ Go Back Home ] </Text>
         </TouchableOpacity>
+        <TextInput
+          style={styles.inputText}
+          onChangeText={(inputString) => this.setState({inputString})}
+          value={this.state.inputString}
+        />
+        <Text style={styles.buttonText}> {this.state.inputString} </Text>
       </View>
     );
   }
@@ -40,7 +55,7 @@ class Page3 extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'pink',
+    backgroundColor: 'green',
   },
 
   regularText: {
@@ -58,6 +73,15 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
 
+  inputText: {
+    height: 40,
+    width: 250,
+    marginTop: 30,
+    marginLeft: 55,
+    borderColor: 'red',
+    borderWidth: 2,
+    backgroundColor: 'white',
+  }
 });
 
 module.exports = Page3;
