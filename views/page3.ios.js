@@ -1,5 +1,3 @@
-var page3 = require('./page3.ios')
-
 import React, {
   Component,
   View,
@@ -8,32 +6,28 @@ import React, {
   StyleSheet
 } from 'react-native';
 
-class NextPage extends Component {
+class Page3 extends Component {
 
   componentDidMount(){
     console.log('nextPage did mount')
   }
 
-  goToPage3() {
-    console.log('entered go to page 3')
-    this.props.navigator.push({
-      navigationBarHidden: true,
-      component: page3,
-    });
-
+  goToNextPage() {
+    console.log('entered go to nextPage')
+    this.props.navigator.popN(1)
   }
 
   goBackHome() {
     console.log('entered go back home')
-    this.props.navigator.popN(1)
+    this.props.navigator.popN(2)
   }
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.regularText}> {this.props.randomString} </Text>
-        <TouchableOpacity onPress={this.goToPage3.bind(this)}>
-          <Text style={styles.buttonText}> [ Go to Page 3 ] </Text>
+        <TouchableOpacity onPress={this.goToNextPage.bind(this)}>
+          <Text style={styles.buttonText}> [ Go to nextPage ] </Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={this.goBackHome.bind(this)}>
           <Text style={styles.buttonText}> [ Go Back Home ] </Text>
@@ -66,4 +60,4 @@ const styles = StyleSheet.create({
 
 });
 
-module.exports = NextPage;
+module.exports = Page3;
