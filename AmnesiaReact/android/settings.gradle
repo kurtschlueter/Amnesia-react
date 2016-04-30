@@ -1,0 +1,3 @@
+rootProject.name = 'AmnesiaReact'
+
+include ':app'
